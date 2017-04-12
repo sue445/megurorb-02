@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-<title> #megurorb</title>
+<title>今日から使える！OSSプルリク集 #megurorb</title>
 
 <meta name="description" content="">
 <meta name="author" content="sue445">
@@ -45,7 +45,7 @@
   <div class="slides">
     <section>
 
-<h1>#megurorb</h1>
+<h1>今日から使える！OSSプルリク集 #megurorb</h1>
 <p>sue445</p>
 
 <p>2017/04/20 <a href="https://megurorb.connpass.com/event/55107/">Meguro.rb#2</a></p>
@@ -55,10 +55,221 @@
 
 <h2>自己紹介 <a href="https://twitter.com/sue445"><img src="images/sue445.png" alt="sue445"></a>
 </h2>
+<ul>
+  <li>Go Sueyoshi a.k.a <a href="https://twitter.com/sue445">sue445</a>
+</li>
+  <li>
+<a href="http://www.drecom.co.jp/">株式会社ドリコム</a> 所属
+    <ul>
+      <li>インフラストラクチャー部</li>
+      <li>社内gemを中心にアプリからインフラまでだいたいサーバサイドを浅く広く見てる</li>
+    </ul>
+  </li>
+  <li>今まで作った主要なものは <a href="http://qiita.com/advent-calendar/2016/sue445">sue445 Advent Calendar 2016 - Qiita</a> を参照</li>
+  <li>「ドリコムのプリキュアの人」として社内外で有名</li>
+  <li>Twitterは上級者向けのアカウントなのでフォロー厳禁 <img class="emoji" alt=":warning:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png">
+</li>
+</ul>
+
+</section>
+<section>
+
+<h3>今期の嫁：キュアカスタード</h3>
+<p><img src="images/cure_custard.jpg" alt="cure custard"></p>
+
+</section>
+<section>
+
+<h3>本気の嫁：キュアピース</h3>
+<p><img src="images/cure_engineer_peace.jpg" alt="cure peace"></p>
+
+</section>
+<section>
+
+<h2>今日話すこと</h2>
+<ul>
+  <li>OSSにプルリク出す時のあるあるネタを実用例を交えて紹介</li>
+</ul>
+
+</section>
+<section>
+
+<h2>1. ドキュメントのtypoなどを修正</h2>
+<ul>
+  <li>これが一番プルリクの難易度は低い</li>
+</ul>
+
+</section>
+<section>
+
+<h3><a href="https://github.com/gitlabhq/gitlabhq/pull/7534">https://github.com/gitlabhq/gitlabhq/pull/7534</a></h3>
+<ul>
+  <li>GitLabのwebhookで実装はされているが、リファレンスから漏れているパラメータがいくつかあったので追加</li>
+  <li>「◯◯（プルリク番号）で追加されているけどその時にリファレンスに更新されていないよ！」って言えればベスト</li>
+  <li>GitLabはAPIの実装とリファレンスの差異が結構多いので狙い目
+    <ul>
+      <li>今は GitHub ではなく <a href="https://gitlab.com/gitlab-org/gitlab-ce">https://gitlab.com/gitlab-org/gitlab-ce</a> だけでissueなどを受け付けている</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>2. .travis.yml に新しいRubyのバージョンを追加</h2>
+<pre><code class="language-yml">rvm:
+  - 2.1
+  - 2.2.2
+  - 2.3.1
+  # ここに2.4を追加したい
+</code></pre>
+
+</section>
+<section>
+
+<h3>CI against ruby 2.4</h3>
+<p><a href="https://github.com/sue445/index_shotgun/pull/28/files">https://github.com/sue445/index_shotgun/pull/28/files</a></p>
+
+<p><img src="images/ci-against-1.png" alt="ci against ruby 2.4"></p>
+
+</section>
+<section>
+
+<h3>英文の元ネタ</h3>
+<p><a href="https://github.com/amatsuda/database_rewinder/commit/6a1f87c3a0729391bd24c68f38d28622d385479b">https://github.com/amatsuda/database_rewinder/commit/6a1f87c3a0729391bd24c68f38d28622d385479b</a></p>
+
+<p><img src="images/ci-against-2.png" alt="ci against ruby 2.4"></p>
+
+<p>「CI against 〜」は使いやすいので定型句として覚えていていい</p>
+
+</section>
+<section>
+
+<h2>3. gemの新しいバージョンが出たので依存を緩めたい</h2>
+<p><img src="images/activeadmin-1.png" alt="activeadmin"></p>
+
+</section>
+<section>
+
+<h2><a href="https://github.com/activeadmin/activeadmin/pull/4722">https://github.com/activeadmin/activeadmin/pull/4722</a></h2>
+<ul>
+  <li>kaminari v1系が出た直後に、activeadminでkaminari 1系使うために依存を緩めたかった</li>
+</ul>
+
+<p><img src="images/activeadmin-2.png" alt="activeadmin"></p>
+
+</section>
+<section>
+
+<h3>英文の元ネタ</h3>
+<p><a href="https://github.com/activeadmin/activeadmin/commit/7a861b723bd65ea174541cf2f23048143575cba8">https://github.com/activeadmin/activeadmin/commit/7a861b723bd65ea174541cf2f23048143575cba8</a></p>
+
+<p><img src="images/activeadmin-3.png" alt="activeadmin"></p>
+
+<p>「Relax ◯◯ dependency for △△△」も使いやすいので定型句として覚えていていい</p>
+
+</section>
+<section>
+
+<h2>4. activesupportやactiverecordに依存してるgemでRuby 2.2未満系でコケるので5系未満使うようにする</h2>
+<ul>
+  <li>1年以上ビルドしてないようなリポジトリだと久しぶりのPRでビルドがコケる原因第1位</li>
+</ul>
+
+<p><img src="images/global-1.png" alt="global"></p>
+
+<p><a href="https://travis-ci.org/railsware/global/jobs/198722120">https://travis-ci.org/railsware/global/jobs/198722120</a></p>
+
+</section>
+<section>
+
+<h3>Gemfileにとりあえずこれ書いとけば動くのでPR送る</h3>
+<pre><code class="language-ruby">if Gem::Version.create(RUBY_VERSION) &lt; Gem::Version.create("2.2.2")
+  # activesupport 5+ requires MRI 2.2.2+
+  gem "activesupport", "&lt; 5.0.0"
+end
+</code></pre>
 
 <ul>
-  <li><a href="https://twitter.com/sue445">sue445</a></li>
+  <li>「Ruby 2.2.2未満で動かんからとりあえずサポート切ったわ！」っていきなりPR送るのは穏やかじゃないので、Ruby 2.2.2未満だったらCIでactivesupport 5系使わないようにしてCIを正常な状態に戻すのが平和</li>
+  <li>実際にRuby 2.2.2未満のサポート切るかどうかはリポジトリオーナーの判断に委ねる</li>
 </ul>
+
+</section>
+<section>
+
+<h3>Tips：バージョンは文字列比較ではなく <a href="https://docs.ruby-lang.org/ja/2.4.0/class/Gem=3a=3aVersion.html">Gem::Version</a> で比較した方がいい</h3>
+
+<pre><code class="language-ruby">"2.1.10" &gt; "2.1.2"
+#=&gt; false
+
+Gem::Version.create("2.1.10") &gt; Gem::Version.create("2.1.2")
+#=&gt; true
+
+"5.1.0" &gt; "5.1.0.rc1"
+#=&gt; false
+
+Gem::Version.create("5.1.0") &gt; Gem::Version.create("5.1.0.rc1")
+#=&gt; true
+</code></pre>
+
+</section>
+<section>
+
+<h2>5. Railsのrc出たからとりあえずビルドしようぜー！</h2>
+<p><a href="https://github.com/mitaku/komachi_heartbeat/pull/22">https://github.com/mitaku/komachi_heartbeat/pull/22</a></p>
+
+<p><img src="images/komachi_heartbeat-1.png" alt="komachi_heartbeat"></p>
+
+</section>
+<section>
+
+<h3>.travis.ymlで複数gemfile対応してるのであればgemfile作って1行追加するだけ</h3>
+<p>gemfiles/rails5_1.gemfile</p>
+
+<pre><code class="language-ruby">source "https://rubygems.org"
+
+gem 'rails', "~&gt; 5.1.0.rc1"
+
+gemspec path: '../'
+</code></pre>
+
+<p>.travis.yml</p>
+
+<pre><code class="language-yaml">gemfile:
+  - gemfiles/rails4_1.gemfile
+  - gemfiles/rails4_2.gemfile
+  - gemfiles/rails5_0.gemfile
+  - gemfiles/rails5_1.gemfile # &lt;- 1行追加
+</code></pre>
+
+</section>
+<section>
+
+<h3>正式版じゃないのでallow_failuresにしておいて、ビルドコケるのは許容する</h3>
+<pre><code class="language-yaml">matrix:
+  allow_failures:
+    # NOTE: There are unstable versions
+    - rvm: ruby-head
+    - gemfile: gemfiles/rails5_1.gemfile # TODO: Remove this after rails5.1 is released!
+</code></pre>
+
+</section>
+<section>
+
+<h2>6. Travis CI対応してないリポジトリに .travis.yml 投げつける</h2>
+<ul>
+  <li>自分のforkしたリポジトリでTravis CI設定してちゃんと動作確認した後でPR送るのが親切</li>
+  <li><a href="https://github.com/mitaku/komachi_heartbeat/pull/5">https://github.com/mitaku/komachi_heartbeat/pull/5</a></li>
+</ul>
+
+<p><img src="images/komachi_heartbeat-2.png" alt="komachi_heartbeat"></p>
+
+</section>
+<section>
+
+<h2>Let’s contribute! <img class="emoji" alt=":innocent:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f607.png">
+</h2>
 
 </section>
 
