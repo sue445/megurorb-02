@@ -1,4 +1,4 @@
-# 今日から使える！OSSプルリク集 #gitlabjp
+# 今日から使える！OSSプルリク集 #megurorb
 
 [Meguro.rb#2 2017/04/20(Thu) - connpass](https://megurorb.connpass.com/event/55107/) の発表資料です
 
