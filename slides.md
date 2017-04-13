@@ -87,7 +87,7 @@ https://github.com/activeadmin/activeadmin/commit/7a861b723bd65ea174541cf2f23048
 https://travis-ci.org/railsware/global/jobs/198722120
 
 ---
-### Gemfileにとりあえずこれ書いとけば動くのでPR送る
+### Gemfileにとりあえずこれ書いとけば `bundle install` できるのでPR送る
 ```ruby
 if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.2.2")
   # activesupport 5+ requires MRI 2.2.2+
