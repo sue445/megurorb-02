@@ -1,26 +1,3 @@
-GIT
-  remote: git://github.com/sue445/reveal-ck.git
-  revision: fb848f7bfd25adb719c90b4d5101d69373bc3fc5
-  branch: meta_contents
-  specs:
-    reveal-ck (3.5.1)
-      docile (= 1.1.5)
-      gemoji (= 3.0.0)
-      gli (= 2.14.0)
-      guard (= 2.14.0)
-      guard-livereload (= 2.5.2)
-      haml (= 4.0.7)
-      html-pipeline (= 2.4.2)
-      kramdown (= 1.13.1)
-      listen (= 3.1.5)
-      rack (= 2.0.1)
-      rack-livereload (= 0.3.16)
-      rake (= 12.0.0)
-      rinku (= 2.0.2)
-      slim (= 3.0.7)
-      thor (= 0.19.1)
-      tilt (= 2.0.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +66,23 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    reveal-ck (3.6.0)
+      docile (= 1.1.5)
+      gemoji (= 3.0.0)
+      gli (= 2.14.0)
+      guard (= 2.14.0)
+      guard-livereload (= 2.5.2)
+      haml (= 4.0.7)
+      html-pipeline (= 2.4.2)
+      kramdown (= 1.13.1)
+      listen (= 3.1.5)
+      rack (= 2.0.1)
+      rack-livereload (= 0.3.16)
+      rake (= 12.0.0)
+      rinku (= 2.0.2)
+      slim (= 3.0.7)
+      thor (= 0.19.1)
+      tilt (= 2.0.5)
     rinku (2.0.2)
     ruby_dep (1.5.0)
     shellany (0.0.1)
@@ -108,7 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   rake
-  reveal-ck!
+  reveal-ck
 
 BUNDLED WITH
    1.14.6
